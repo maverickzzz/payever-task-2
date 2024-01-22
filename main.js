@@ -30,7 +30,7 @@ function onPointerMove( event ) {
   if (intersects.length > 0) {
     p.className = 'tooltip show';
     cPointLabel.position.set(intersects[0].object.position.x, intersects[0].object.position.y + 0.5, intersects[0].object.position.z + 1);
-    p.innerHTML = `<img src="assets/${intersects[0].object.name}.png"/> ${intersects[0].object.name}`;
+    p.innerHTML = `<img src="/assets/${intersects[0].object.name}.png"/> ${intersects[0].object.name}`;
   } else {
     p.className = 'tooltip hide';
   }
@@ -44,7 +44,7 @@ const pivot = new THREE.Mesh(
 );
 scene.add(pivot);
 
-const earthTexture = new THREE.TextureLoader().load('assets/earth.jpg');
+const earthTexture = new THREE.TextureLoader().load('/assets/earth.jpg');
 const earth = new THREE.Mesh(
   new THREE.SphereGeometry(8, 32, 32),
   new THREE.MeshBasicMaterial({ map: earthTexture, wireframe: false })
